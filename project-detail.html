@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Project Details</title>
+  <link rel="stylesheet" href="css/custom.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100">
+  <div class="max-w-4xl mx-auto px-6 py-12">
+    <a href="projects.html" class="text-primary-dark hover:underline mb-4 block">← Back to Projects</a>
+    <h1 class="text-4xl font-bold mb-6" id="title">Project Title</h1>
+    <img id="cover" src="images/project-signlang.jpg" alt="Project Image" class="rounded-xl shadow-lg mb-6" />
+    <p id="description" class="leading-relaxed text-lg">Loading project description...</p>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get('id');
+
+    const projects = {
+      "ai-sign-translator": {
+        title: "AI Sign Language Translator",
+        description: "Built using MediaPipe Hands and Google Cloud Vision API, this project translates hand gestures into live text/speech. Includes gesture history, secure AES encryption, and sentence formation.",
+        cover: "images/project-signlang.jpg"
+      },
+      // Add more projects here
+    };
+
+    if (projects[id]) {
+      document.getElementById("title").innerText = projects[id].title;
+      document.getElementById("description").innerText = projects[id].description;
+      document.getElementById("cover").src = projects[id].cover;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Parallax background on hero */
+#hero {
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+
+/* You can add any custom overrides or utilities here */
