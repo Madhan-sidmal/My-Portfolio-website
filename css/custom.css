@@ -1,13 +1,24 @@
-/* Smooth scroll */
+/* Site-wide background + overlay */
+body {
+  background: url('../images/0e60c070-9755-4611-ae21-66a1dccf1de5.jpeg') center/cover no-repeat;
+  position: relative;
+  z-index: 0;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-color: rgba(30, 41, 59, 0.6);
+  z-index: -1;
+}
+
+/* Ensure navbar doesn’t cover content */
+section:first-of-type {
+  padding-top: 6rem; /* match nav height */
+}
+
+/* Smooth scrolling */
 html {
   scroll-behavior: smooth;
 }
-
-/* Parallax background on hero */
-#hero {
-  background-attachment: fixed;
-  background-position: center;
-  background-size: cover;
-}
-
-/* You can add any custom overrides or utilities here */

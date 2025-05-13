@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" x-data="{ darkMode: false }" :class="{ 'dark': darkMode }">
+<html lang="en" class="dark scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sidmal Madhan • Data Science & AI/ML Portfolio</title>
 
-  <!-- TailwindCSS CDN -->
+  <!-- TailwindCSS CDN with darkMode enabled -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -26,67 +26,66 @@
 
   <!-- Custom CSS -->
   <link rel="stylesheet" href="css/custom.css" />
-
-  <!-- Alpine.js for Dark Mode Toggle -->
-  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x/dist/cdn.min.js" defer></script>
 </head>
 
-<body class="bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100 font-sans">
+<body class="font-sans text-gray-100 bg-gray-900">
+
   <!-- NAVBAR -->
-  <nav class="fixed inset-x-0 top-0 flex items-center justify-between px-6 py-4 bg-white/80 dark:bg-gray-800/80 backdrop-blur-md z-20">
-    <div class="text-xl font-bold">Sidmal madhan</div>
-    <div class="flex items-center space-x-4">
-      <a href="#projects" class="hover:underline">Projects</a>
+  <nav class="fixed inset-x-0 top-0 z-30 flex items-center justify-between px-6 py-4
+              bg-gray-800/90 backdrop-blur-md">
+    <a href="#hero" class="text-xl font-bold">Sidmal Madhan</a>
+    <div class="flex items-center space-x-6">
+      <a href="#projects"     class="hover:underline">Projects</a>
       <a href="#certificates" class="hover:underline">Certificates</a>
-      <a href="#timeline" class="hover:underline">Timeline</a>
-      <a href="#contact" class="hover:underline">Contact</a>
-      <button @click="darkMode = !darkMode" class="p-2 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition">
-        <span x-text="darkMode ? '☀️' : '🌙'"></span>
-      </button>
+      <a href="#timeline"     class="hover:underline">Timeline</a>
+      <a href="#contact"      class="hover:underline">Contact</a>
     </div>
   </nav>
 
-<section
-  id="hero"
-  class="min-h-screen flex flex-col justify-center items-center px-4 text-center relative"
-  style="background-image: url('images/0e60c070-9755-4611-ae21-66a1dccf1de5.jpeg'); background-size: cover; background-position: center; background-attachment: fixed;"
->
-  <div class="absolute inset-0 bg-black/40"></div> <!-- Optional overlay for contrast -->
-  <div class="relative z-10 text-white text-center">
-    <h1 class="text-5xl sm:text-7xl font-extrabold mb-4">I’m Sidmal Madhan</h1>
-    <p class="text-xl sm:text-2xl text-white/90 max-w-2xl mb-6">
-      Welcome to my portfolio website where you can find out my professional detail, my education, my projects and my certifications relevant to my carrer-path.
-    </p>
-    <a href="#projects" class="px-6 py-3 bg-white text-primary-dark rounded-full font-semibold shadow-lg hover:shadow-xl transition">
-      View My Work
-    </a>
-  </div>
-</section>
+  <!-- HERO SECTION -->
+  <section
+    id="hero"
+    class="relative flex flex-col items-center text-center px-4 py-20 pt-24 sm:pt-32"
+  >
+    <div class="relative z-10 flex flex-col items-center gap-6 max-w-2xl">
+      <img 
+        src="images/profile.jpg" 
+        alt="Sidmal Madhan" 
+        class="w-32 h-32 sm:w-40 sm:h-40 rounded-full border-4 border-gray-700 shadow-lg"
+      />
+      <h1 class="text-4xl sm:text-6xl font-extrabold text-white drop-shadow-lg">
+        I’m Sidmal Madhan
+      </h1>
+      <p class="text-lg sm:text-xl text-gray-300 max-w-xl">
+        Data Scientist & AI/ML Engineer crafting data-driven solutions with beautiful UX.
+      </p>
+      <a href="#projects" class="mt-4 inline-block px-6 py-3 bg-primary-dark text-white rounded-full font-semibold shadow-lg hover:bg-primary-light transition">
+        View My Work
+      </a>
+    </div>
+  </section>
 
-
-
-
+  <!-- ABOUT -->
   <section id="about" class="py-20 px-6 max-w-3xl mx-auto">
-  <h2 class="text-3xl font-bold text-center mb-6">About Me</h2>
-  <p class="leading-relaxed text-gray-700 dark:text-gray-300">
-    Hello! I’m Sidmal Madhan—a passionate Data Scientist and AI/ML enthusiast with hands-on experience in Python, TensorFlow, and building full-stack & IoT solutions.
-    I thrive on transforming complex data into clear, actionable insights and crafting beautiful, intuitive interfaces around them.
-  </p>
-</section>
+    <h2 class="text-3xl font-bold text-center mb-6 text-white">About Me</h2>
+    <p class="leading-relaxed text-gray-300">
+      Hello! I’m Sidmal Madhan—a passionate Data Scientist and AI/ML enthusiast with hands-on experience in Python,
+      TensorFlow, and building full-stack & IoT solutions. I thrive on transforming complex data into clear,
+      actionable insights and crafting beautiful, intuitive interfaces.
+    </p>
+  </section>
 
-
-    <!-- SKILLS SECTION -->
+  <!-- SKILLS -->
   <section id="skills" class="py-20 bg-gray-50 dark:bg-gray-800 px-6">
     <h2 class="text-3xl font-bold text-center mb-8">Skills & Tools</h2>
     <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 max-w-6xl mx-auto">
-      <!-- SQL -->
+      <!-- repeat for each skill, adjusting w-xx/12 for proficiency -->
       <div class="p-4 bg-white dark:bg-gray-700 rounded-lg shadow hover:scale-105 transform transition">
         <h3 class="font-semibold mb-2">SQL</h3>
         <div class="h-2 bg-primary-light rounded-full overflow-hidden">
           <div class="h-full bg-primary-dark w-10/12"></div>
         </div>
       </div>
-      <!-- Machine Learning -->
       <div class="p-4 bg-white dark:bg-gray-700 rounded-lg shadow hover:scale-105 transform transition">
         <h3 class="font-semibold mb-2">Machine Learning</h3>
         <div class="h-2 bg-primary-light rounded-full overflow-hidden">
@@ -100,7 +99,7 @@
           <div class="h-full bg-primary-dark w-11/12"></div>
         </div>
       </div>
-      <!-- C / C++ -->
+      <!-- C/C++ -->
       <div class="p-4 bg-white dark:bg-gray-700 rounded-lg shadow hover:scale-105 transform transition">
         <h3 class="font-semibold mb-2">C / C++</h3>
         <div class="h-2 bg-primary-light rounded-full overflow-hidden">
@@ -180,49 +179,46 @@
     </div>
   </section>
 
-
-  <!-- PROJECTS SECTION -->
+  <!-- PROJECTS -->
   <section id="projects" class="py-20 px-6">
-    <h2 class="text-3xl font-bold text-center mb-8">Selected Projects</h2>
+    <h2 class="text-3xl font-bold text-center mb-8 text-white">Selected Projects</h2>
     <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-      <!-- Project Card Template -->
-      <div class="bg-white dark:bg-gray-700 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition">
+      <!-- Project Card -->
+      <div class="bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition">
         <img src="https://via.placeholder.com/600x300" alt="Project Screenshot" class="w-full h-48 object-cover" />
         <div class="p-6">
-          <h3 class="text-xl font-semibold mb-2">AI Sign Language Translator</h3>
-          <p class="text-gray-600 dark:text-gray-300 mb-4">
+          <h3 class="text-xl font-semibold mb-2 text-white">AI Sign Language Translator</h3>
+          <p class="text-gray-300 mb-4">
             Real-time hand gesture to text translator using MediaPipe & Google Cloud Vision.
           </p>
-          
           <div class="flex justify-between items-center">
-            <div class="text-sm text-primary-dark font-medium">JS · MediaPipe · ML</div>
-            <a href="#" class="text-sm underline">View →</a>
+            <div class="text-sm text-primary-light font-medium">JS · MediaPipe · ML</div>
+            <a href="project-detail.html?id=1" class="text-sm text-primary-light underline">View →</a>
           </div>
         </div>
       </div>
-      <a href="project-detail.html?id=1" class="text-sm underline">View →</a>
       <!-- …more project cards -->
     </div>
   </section>
 
-  <!-- CERTIFICATES SECTION -->
-  <section id="certificates" class="py-20 px-6 bg-gray-50 dark:bg-gray-800">
-    <h2 class="text-3xl font-bold text-center mb-8">My Certificates</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-      <!-- Certificate Card Template -->
-      <div class="certificate-card bg-white dark:bg-gray-700 rounded-lg overflow-hidden shadow-lg transform hover:scale-105 transition">
+  <!-- CERTIFICATES -->
+  <section id="certificates" class="py-20 px-6 bg-gray-800">
+    <h2 class="text-3xl font-bold text-center mb-8 text-white">My Certificates</h2>
+    <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+      <!-- Certificate Card -->
+      <div class="bg-gray-700 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition">
         <img src="images/certificate1.jpg" alt="Certificate Title" class="w-full h-48 object-cover" />
         <div class="p-4">
-          <h3 class="text-lg font-semibold mb-2">Certificate Title</h3>
-          <p class="text-sm text-gray-600 dark:text-gray-300">Issuing Organization • YYYY</p>
+          <h3 class="text-lg font-semibold mb-2 text-white">Certificate Title</h3>
+          <p class="text-sm text-gray-300">Issuer • YYYY</p>
+          <a href="certificate-detail.html?id=1" class="mt-2 inline-block text-primary-light underline">View Details →</a>
         </div>
       </div>
-      <a href="certificate-detail.html?id=1" class="absolute inset-0 z-10"></a>
-      <!-- …duplicate for each certificate -->
+      <!-- …more certificates -->
     </div>
   </section>
 
-    <!-- TIMELINE SECTION -->
+<!-- TIMELINE SECTION -->
   <section id="timeline" class="py-20 bg-gray-50 dark:bg-gray-800 px-6">
     <h2 class="text-3xl font-bold text-center mb-8">My Journey</h2>
     <div class="relative max-w-3xl mx-auto
@@ -274,19 +270,9 @@
     </div>
   </section>
 
-
-  <!-- CONTACT SECTION -->
+  <!-- CONTACT -->
   <section id="contact" class="py-20 px-6 max-w-md mx-auto text-center">
-    <h2 class="text-3xl font-bold mb-6">Get In Touch</h2>
-    <form class="space-y-4 mb-8">
-      <input type="text" placeholder="Your Name" class="w-full px-4 py-2 rounded-lg border focus:outline-none focus:ring-2 focus:ring-primary-light" />
-      <input type="email" placeholder="Your Email" class="w-full px-4 py-2 rounded-lg border focus:outline-none focus:ring-2 focus:ring-primary-light" />
-      <textarea rows="4" placeholder="Message" class="w-full px-4 py-2 rounded-lg border focus:outline-none focus:ring-2 focus:ring-primary-light"></textarea>
-      <button type="submit" class="w-full bg-primary-dark text-white px-4 py-2 rounded-lg font-semibold hover:bg-primary-light transition">
-        Send Message
-      </button>
-    </form>
-
+    <h2 class="text-3xl font-bold mb-6 text-white">Get In Touch</h2>
     <!-- Social / Chat Buttons -->
     <div class="flex flex-col sm:flex-row justify-center gap-4">
       <a
@@ -315,17 +301,16 @@
       </a>
     </div>
   </section>
-
+  </section>
 
   <!-- FOOTER -->
-  <footer class="py-6 text-center text-gray-500 dark:text-gray-400">
-    © 2025 Your Name. Built with ❤️ and data.
+  <footer class="py-6 text-center text-gray-400">
+    © 2025 Sidmal Madhan. Built with ❤️ and data.
   </footer>
 
-  <!-- GSAP + ScrollTrigger -->
+  <!-- GSAP Animations -->
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-  <!-- Your custom JS -->
   <script defer src="js/main.js"></script>
 </body>
 </html>
